@@ -34,7 +34,11 @@ class Register extends React.Component {
 
   afterOpenModal() {
     // references are now sync'd and can be accessed.
-    this.subtitle.style.color = '#f00';
+    this.subtitle.style.color = '#92959b';
+    this.subtitle.style.display = "block"
+    this.closeButton.style.margin = "20px"
+    this.submit.style.margin = "10px"
+
   }
 
   closeModal() {
@@ -44,7 +48,7 @@ class Register extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.openModal}>Open Modal</button>
+        <button onClick={this.openModal}>Register</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -53,10 +57,14 @@ class Register extends React.Component {
           contentLabel="Example Modal"
         >
 
-          <h2 ref={subtitle => this.subtitle = subtitle}>Login</h2>
-          <button onClick={this.closeModal}>close</button>
+          <h2 ref={subtitle => this.subtitle = subtitle}>Register</h2>
+          <button ref={closeButton => this.closeButton = closeButton} onClick={this.closeModal}>close</button>
 
           <form onSubmit={this.handleSubmit}>
+          <label>
+            Name:
+            <input type="text" value={this.state.name} onChange={this.handleChange} />
+          </label>
           <label>
             Email:
             <input type="text" value={this.state.email} onChange={this.handleChange} />
@@ -65,8 +73,9 @@ class Register extends React.Component {
               Password:
               <input type="text" value={this.state.password} onChange={this.handleChange} />
           </label>
-          <input type="submit" value="Login" />
+          <input ref={submit => this.submit = submit} type="submit" value="Submit" onClick={this.handleSubmit} />
           <label>
+            remember me
           <input type="checkbox" value="Remember Me?"  />
           </label>
         </form>
