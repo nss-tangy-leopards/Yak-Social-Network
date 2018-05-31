@@ -1,26 +1,62 @@
 import React from 'react';
+import Modal from 'react-modal';
 
-class NameForm extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {email: '', password: ''};
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
 
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
-    }
+// Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
+Modal.setAppElement('#root')
 
-    handleChange(event) {
-      this.setState({password: event.target.password, email: event.target.email});
-    }
+class Register extends React.Component {
+  constructor() {
+    super();
 
-    handleSubmit(event) {
-      alert('A name was submitted: ' + this.state.value);
-      event.preventDefault();
-    }
+    this.state = {
+      modalIsOpen: false
+    };
 
-    render() {
-      return (
-        <form onSubmit={this.handleSubmit}>
+    this.openModal = this.openModal.bind(this);
+    this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    this.subtitle.style.color = '#f00';
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.openModal}>Open Modal</button>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+
+          <h2 ref={subtitle => this.subtitle = subtitle}>Login</h2>
+          <button onClick={this.closeModal}>close</button>
+
+          <form onSubmit={this.handleSubmit}>
           <label>
             Email:
             <input type="text" value={this.state.email} onChange={this.handleChange} />
@@ -34,8 +70,10 @@ class NameForm extends React.Component {
           <input type="checkbox" value="Remember Me?"  />
           </label>
         </form>
-      );
-    }
+        </Modal>
+      </div>
+    );
   }
+}
 
-export default NameForm;
+export default Register
