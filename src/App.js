@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Register from "./register/register.js"
+import NameForm from './register/NameForm';
 
 
 class App extends Component {

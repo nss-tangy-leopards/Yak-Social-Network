@@ -16,8 +16,9 @@ const customStyles = {
 Modal.setAppElement('#root')
 
 class Register extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.state = {}
 
     this.state = {
       modalIsOpen: false
@@ -38,6 +39,7 @@ class Register extends React.Component {
     this.subtitle.style.display = "block"
     this.closeButton.style.margin = "20px"
     this.submit.style.margin = "10px"
+
 
   }
 
@@ -62,8 +64,16 @@ class Register extends React.Component {
 
           <form onSubmit={this.handleSubmit}>
           <label>
-            Name:
-            <input type="text" value={this.state.name} onChange={this.handleChange} />
+            First Name:
+            <input type="text" value={this.state.firstName} onChange={this.handleChange} />
+          </label>
+          <label>
+            Last Name:
+            <input type="text" value={this.state.lastName} onChange={this.handleChange} />
+          </label>
+          <label>
+            Location:
+            <input type="text" value={this.state.location} onChange={this.handleChange} />
           </label>
           <label>
             Email:
