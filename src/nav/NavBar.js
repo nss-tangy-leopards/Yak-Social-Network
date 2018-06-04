@@ -56,8 +56,8 @@ export default class NavBar extends Component {
                 <ul className="navbar-nav px-3">
                     <li className="nav-item text-nowrap">
                         <a className="nav-link" id="nav__profile"
-                            onClick={this.props.viewHandler} href="#">
-                            <img id="navimg__profile"
+                            /* onClick={this.props.viewHandler}*/ href="#">
+                            <img id="navimg__profileimg"
                                  onClick={()=>$(".profileMenu").slideToggle(333)}
                                  src={profilepic} style={{ height: `30px` }} />
                         </a>
@@ -71,7 +71,7 @@ export default class NavBar extends Component {
                 <article className="profileMenu">
                     <section className="profileMenu__item">
                         <div><a title="notifications" id="nav__notifications" href="#">Notifications</a></div>
-                        <div><a title="notifications" id="nav__profile" href="#">My Profile</a></div>
+                        <div><a title="notifications" id="nav__profile" onClick={this.props.viewHandler} href="#">My Profile</a></div>
                         <div><a title="notifications" id="nav__followers" href="#">My Followers</a></div>
                         <div><a title="notifications" id="nav__friends" href="#">My Friends</a></div>
                     </section>

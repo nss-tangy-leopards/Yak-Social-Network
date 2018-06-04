@@ -60,7 +60,7 @@ export default class SearchResults extends Component {
                             <img className="card-img-top avatar" src={Avatar} alt="Generic person image" />
                             <div className="card-body">
                                 <h5 className="card-title">{u.email}</h5>
-                                <a href="#" className="btn btn-outline-success">View profile</a>
+                                <a href="#" className="btn btn-outline-success" id={`results__profile__${u.id}`} onClick={this.props.showView}>View profile</a>
                             </div>
                         </div>
                     )

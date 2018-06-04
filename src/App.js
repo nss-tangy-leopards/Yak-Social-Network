@@ -5,6 +5,7 @@ import NavBar from './nav/NavBar';
 import Home from './newsfeed/Home';
 import Login from './auth/Login';
 import SearchResults from './search/SearchResults';
+import Profile from "./user/Profile"
 
 class App extends Component {
 
@@ -12,7 +13,8 @@ class App extends Component {
     state = {
         currentView: "login",
         searchTerms: "",
-        activeUser: localStorage.getItem("yakId")
+        activeUser: localStorage.getItem("yakId"),
+        userProfile: localStorage.getItem("yakId")
     }
 
     // Search handler -> passed to NavBar
@@ -39,11 +41,13 @@ class App extends Component {
     // Argument can be an event (via NavBar) or a string (via Login)
     showView = function (e) {
         let view = null
-
+        let user = this.state.userProfile
         // Click event triggered switching view
         if (e.hasOwnProperty("target")) {
             view = e.target.id.split("__")[1]
-
+            if(e.target.id.split("__").length > 2){
+                user = e.target.id.split("__")[2]
+            }
             // View switch manually triggered by passing in string
         } else {
             view = e
@@ -54,9 +58,15 @@ class App extends Component {
             this.setActiveUser(null)
         }
 
+        if(view === "profile"){
+            this.setState({
+                userProfile: user
+            })
+        }
+
         // Update state to correct view will be rendered
         this.setState({
-            currentView: view
+            currentView: view            
         })
 
     }.bind(this)
@@ -77,7 +87,9 @@ class App extends Component {
                 case "logout":
                     return <Login showView={this.showView} setActiveUser={this.setActiveUser} />
                 case "results":
-                    return <SearchResults terms={this.state.searchTerms} />
+                    return <SearchResults terms={this.state.searchTerms} showView={this.showView} />
+                case "profile":
+                    return <Profile user={this.state.userProfile} />
                 case "home":
                 default:
                     return <Home activeUser={this.state.activeUser} />
