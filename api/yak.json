@@ -21,34 +21,29 @@
       "id": 4
     },
     {
-      "email": "me@levischubert.com",
+      "email": "me@LeviSchubert.com",
       "password": "none",
       "id": 5
     },
     {
-      "email": "hayley@hayleylandsberg.com",
+      "email": "hayley@landsberg.com",
       "password": "none",
       "id": 6
     },
     {
-      "email": "matt@mattkelly.com",
+      "email": "matt@kelly.com",
       "password": "none",
       "id": 7
     },
     {
-      "email": "daniel@danielbeecroft.com",
+      "email": "daniel@dbeecroft.com",
       "password": "none",
       "id": 8
     },
     {
-      "email": "john@johnmccoy.com",
+      "email": "john@mccoy.com",
       "password": "none",
       "id": 9
-    },
-    {
-      "email": "me@LeviSchubert.com",
-      "password": "none",
-      "id": 10
     }
   ],
   "friends": [
