@@ -13,13 +13,25 @@ export default class SearchResults extends Component {
         events: []
     }
 
-    /*
-        By putting the API search code in `componentDidMount()` you will note
-        that when you perform a search, and are viewing the results, you can't
-        search again without going back to the main view.
+    // shouldComponentUpdate(nextProps, nextState){
+    //     return this.props.terms !== nextProps.terms
+    // }
 
-        How might you solve this issue?
-    */
+    componentDidUpdate(){
+        const newState = {}
+        fetch(`http://localhost:5001/posts?message_like=${encodeURI(this.props.terms)}&_expand=user`)
+            .then(r => r.json())
+            .then(posts => {
+                newState.posts = posts
+                return fetch(`http://localhost:5001/users?q=${encodeURI(this.props.terms)}`)
+            })
+            .then(r => r.json())
+            .then(users => {
+                newState.users = users
+                this.setState(newState)
+            })
+    }
+
     componentDidMount() {
         const newState = {}
         fetch(`http://localhost:5001/posts?message_like=${encodeURI(this.props.terms)}&_expand=user`)
@@ -38,7 +50,7 @@ export default class SearchResults extends Component {
     render() {
         return (
             <div className="searchResults">
-                <h1>Search Results</h1>
+                <h1>Search Results for {`"${this.props.terms}"`}</h1>
 
                 {
                     this.state.posts.map(p =>
@@ -60,7 +72,7 @@ export default class SearchResults extends Component {
                             <img className="card-img-top avatar" src={Avatar} alt="Generic person image" />
                             <div className="card-body">
                                 <h5 className="card-title">{u.email}</h5>
-                                <a href="#" className="btn btn-outline-success">View profile</a>
+                                <a href="#" className="btn btn-outline-success" id={`results__profile__${u.id}`} onClick={this.props.showView}>View profile</a>
                             </div>
                         </div>
                     )
