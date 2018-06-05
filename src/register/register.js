@@ -37,6 +37,7 @@ class Register extends React.Component {
     // references are now sync'd and can be accessed.
     this.subtitle.style.color = '#92959b';
     this.subtitle.style.display = "block"
+    this.subtitle.style.width = "50%"
     this.closeButton.style.margin = "20px"
     this.submit.style.margin = "10px"
 
