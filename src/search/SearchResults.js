@@ -56,7 +56,7 @@ export default class SearchResults extends Component {
                     this.state.posts.map(p =>
                         <div className="card post" key={p.id}>
                             <div className="card-body">
-                                <h5 className="card-title">By {p.user.email}</h5>
+                                <h5 className="card-title">{p.user.firstName} {p.user.lastName}</h5>
                                 <p className="card-text">
                                     {p.message}
                                 </p>
@@ -71,7 +71,8 @@ export default class SearchResults extends Component {
                         <div className="card post" key={u.id}>
                             <img className="card-img-top avatar" src={Avatar} alt="Generic person image" />
                             <div className="card-body">
-                                <h5 className="card-title">{u.email}</h5>
+                                <h5 className="card-title">{u.firstName} {u.lastName}</h5>
+                                <h6 className="card-title">{u.email}</h6>
                                 <a href="#" className="btn btn-outline-success" id={`results__profile__${u.id}`} onClick={this.props.showView}>View profile</a>
                             </div>
                         </div>

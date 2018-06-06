@@ -3,46 +3,82 @@
     {
       "email": "steve@stevebrownlee.com",
       "password": "me",
+      "firstName":"Steve",
+      "lastName": "Brownlee",
+      "city":"Spring Hill",
+      "state":"TN",
       "id": 1
     },
     {
       "email": "joe@shepherd.com",
       "password": "me",
+      "firstName":"Joe",
+      "lastName": "Shepherd",
+      "city":"Nashville",
+      "state":"TN",
       "id": 2
     },
     {
       "email": "jisie@david.com",
       "password": "me",
+      "firstName":"Jisie",
+      "lastName": "David",
+      "city":"Nashville",
+      "state":"TN",
       "id": 3
     },
     {
       "email": "meg@ducharme.com",
       "password": "me",
+      "firstName":"Meg",
+      "lastName": "Ducharme",
+      "city":"Nashville",
+      "state":"TN",
       "id": 4
     },
     {
       "email": "me@LeviSchubert.com",
       "password": "none",
+      "firstName":"Levi",
+      "lastName": "Schubert",
+      "city":"Spring Hill",
+      "state":"TN",
       "id": 5
     },
     {
       "email": "hayley@landsberg.com",
       "password": "none",
+      "firstName":"Hayley",
+      "lastName": "Landsberg",
+      "city":"Nashville",
+      "state":"TN",
       "id": 6
     },
     {
       "email": "matt@kelly.com",
       "password": "none",
+      "firstName":"Matt",
+      "lastName": "Kelly",
+      "city":"Nashville",
+      "state":"TN",
       "id": 7
     },
     {
       "email": "daniel@dbeecroft.com",
       "password": "none",
+      "firstName":"Daniel",
+      "lastName": "Beecroft",
+      "city":"Nashville",
+      "state":"TN",
       "id": 8
     },
     {
       "email": "john@mccoy.com",
       "password": "none",
+      "firstName":"John",
+      "lastName": "McCoy",
+      "city":"Brentwood",
+      "state":"TN",
       "id": 9
     }
   ],
