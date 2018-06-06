@@ -6,6 +6,8 @@ import Home from './newsfeed/Home';
 import Login from './auth/Login';
 import SearchResults from './search/SearchResults';
 import Profile from "./user/Profile"
+import Register from "./auth/Register"
+import RegModal from "./auth/RegModal"
 
 class App extends Component {
 
@@ -66,7 +68,7 @@ class App extends Component {
 
         // Update state to correct view will be rendered
         this.setState({
-            currentView: view            
+            currentView: view
         })
 
     }.bind(this)

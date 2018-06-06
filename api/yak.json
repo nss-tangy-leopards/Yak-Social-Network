@@ -80,6 +80,15 @@
       "city": "Brentwood",
       "state": "TN",
       "id": 9
+    },
+    {
+      "email": "dave@part.com",
+      "password": "none",
+      "firstName": "Dave",
+      "lastName": "Part",
+      "city": "Houghton",
+      "state": "MI",
+      "id": 10
     }
   ],
   "friends": [

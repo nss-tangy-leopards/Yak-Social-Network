@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import "./login.css"
+import Register from "./Register.js"
+import RegModal from "./RegModal"
 
 
 export default class Login extends Component {
@@ -46,9 +48,9 @@ export default class Login extends Component {
                     alert("This user does not exist, feel free to sign up!")
                 }
             })
-                
-                
-            
+
+
+
     }.bind(this)
 
 
@@ -70,9 +72,13 @@ export default class Login extends Component {
                     <input type="checkbox" value="remember-me" /> Remember me
                 </div>
                 <button className="btn btn-lg btn-primary btn-success btn-block" type="submit">Sign in</button>
-                <button className="btn btn-lg btn-primary btn-block" type="button" onClick={this.register}>Sign up</button>
+                <div><RegModal showView={this.props.showView} setActiveUser={this.props.setActiveUser}/></div>
                 <p className="mt-5 mb-3 text-muted">© 2017-2018</p>
+
             </form>
+
+
+
         )
     }
 }
