@@ -39,7 +39,7 @@ export default class Home extends Component {
     }
 
     componentDidMount() {
-        fetch(`http://localhost:5001/posts?userId=${this.props.activeUser}&_expand=user&_sort=id&_order=desc`)
+        fetch(`http://localhost:5001/posts?_sort=id&_order=desc&_expand=user`)
             .then(r => r.json())
             .then(posts => this.setState({ posts: posts }))
     }
@@ -55,7 +55,7 @@ export default class Home extends Component {
                         <div className="newsfeed">
                             <form>
                                 <div className="form-group">
-                                    <label htmlFor="message"><h5>What would you like to Yak about?</h5></label>
+                                    <label htmlForm="message"><h5>What would you like to Yak about?</h5></label>
                                     <textarea id="message"
                                               value={this.state.message}
                                               onChange={this.handleFieldChange}

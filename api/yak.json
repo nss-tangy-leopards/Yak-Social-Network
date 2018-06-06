@@ -3,82 +3,82 @@
     {
       "email": "steve@stevebrownlee.com",
       "password": "me",
-      "firstName":"Steve",
+      "firstName": "Steve",
       "lastName": "Brownlee",
-      "city":"Spring Hill",
-      "state":"TN",
+      "city": "Spring Hill",
+      "state": "TN",
       "id": 1
     },
     {
       "email": "joe@shepherd.com",
       "password": "me",
-      "firstName":"Joe",
+      "firstName": "Joe",
       "lastName": "Shepherd",
-      "city":"Nashville",
-      "state":"TN",
+      "city": "Nashville",
+      "state": "TN",
       "id": 2
     },
     {
       "email": "jisie@david.com",
       "password": "me",
-      "firstName":"Jisie",
+      "firstName": "Jisie",
       "lastName": "David",
-      "city":"Nashville",
-      "state":"TN",
+      "city": "Nashville",
+      "state": "TN",
       "id": 3
     },
     {
       "email": "meg@ducharme.com",
       "password": "me",
-      "firstName":"Meg",
+      "firstName": "Meg",
       "lastName": "Ducharme",
-      "city":"Nashville",
-      "state":"TN",
+      "city": "Nashville",
+      "state": "TN",
       "id": 4
     },
     {
       "email": "me@LeviSchubert.com",
       "password": "none",
-      "firstName":"Levi",
+      "firstName": "Levi",
       "lastName": "Schubert",
-      "city":"Spring Hill",
-      "state":"TN",
+      "city": "Spring Hill",
+      "state": "TN",
       "id": 5
     },
     {
       "email": "hayley@landsberg.com",
       "password": "none",
-      "firstName":"Hayley",
+      "firstName": "Hayley",
       "lastName": "Landsberg",
-      "city":"Nashville",
-      "state":"TN",
+      "city": "Nashville",
+      "state": "TN",
       "id": 6
     },
     {
       "email": "matt@kelly.com",
       "password": "none",
-      "firstName":"Matt",
+      "firstName": "Matt",
       "lastName": "Kelly",
-      "city":"Nashville",
-      "state":"TN",
+      "city": "Nashville",
+      "state": "TN",
       "id": 7
     },
     {
-      "email": "daniel@dbeecroft.com",
+      "email": "daniel@beecroft.com",
       "password": "none",
-      "firstName":"Daniel",
+      "firstName": "Daniel",
       "lastName": "Beecroft",
-      "city":"Nashville",
-      "state":"TN",
+      "city": "Nashville",
+      "state": "TN",
       "id": 8
     },
     {
       "email": "john@mccoy.com",
       "password": "none",
-      "firstName":"John",
+      "firstName": "John",
       "lastName": "McCoy",
-      "city":"Brentwood",
-      "state":"TN",
+      "city": "Brentwood",
+      "state": "TN",
       "id": 9
     }
   ],
@@ -154,6 +154,36 @@
       "message": "Choopin broccoli",
       "userId": "1",
       "id": 11
+    },
+    {
+      "message": "this is a post",
+      "userId": "5",
+      "id": 12
+    },
+    {
+      "message": "Hey guys, I'm on Yak now!",
+      "userId": 6,
+      "id": 13
+    },
+    {
+      "message": "Found an awesome new artist today, totally hyped",
+      "userId": 8,
+      "id": 14
+    },
+    {
+      "message": "Wearing red again today.",
+      "userId": 7,
+      "id": 15
+    },
+    {
+      "message": "chilling out in Nashville today, hit me up if you wanna hang out!",
+      "userId": 9,
+      "id": 16
+    },
+    {
+      "message": "Working all week, ill be free again come next week!",
+      "userId": 5,
+      "id": 17
     }
   ],
   "events": [],
