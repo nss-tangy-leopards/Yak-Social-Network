@@ -19,27 +19,31 @@ export default class Register extends Component {
         email: "",
         firstName: "",
         lastName: "",
-        sate: "",
+        st: "",
         city: "",
         password: ""
     }
+    handleFieldChange = function (evt) {
+        const stateToChange = {}
+        stateToChange[evt.target.id] = evt.target.value
+        this.setState(stateToChange)
+    }.bind(this)
 
-    createUser(){
+    createUser = function(){
          // Create user in API
          fetch("http://localhost:5001/users", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({email: this.state.email, password: this.state.password, firstName: this.state.firstName, lastName: this.state.lastName, city: this.state.city, state: this.state.state})
+            body: JSON.stringify({email: this.state.email, password: this.state.password, firstName: this.state.firstName, lastName: this.state.lastName, city: this.state.city, state: this.state.st})
         })
 
         // Set local storage with newly created user's id and show home view
         .then(newUser => {
-            this.props.setActiveUser(newUser.id)
-            this.props.showView("home")
+            alert("Your user has been created, you may now log in!")
         })
-    }
+    }.bind(this)
 
     render() {
         return (
@@ -50,13 +54,13 @@ export default class Register extends Component {
                 <label htmlFor="inputEmail" className="sr-only">Email address</label>
                 <input onChange={this.handleFieldChange} type="email" id="email" className="form-control" placeholder="Email address" required="" autoFocus="" />
                 <label htmlFor="inputFirstName" className="sr-only">First Name</label>
-                <input onChange={this.handleFieldChange} type="First Name" id="First Name" className="form-control" placeholder="First Name" required="" autoFocus="" />
+                <input onChange={this.handleFieldChange} type="First Name" id="firstName" className="form-control" placeholder="First Name" required="" autoFocus="" />
                 <label htmlFor="inputLastName" className="sr-only">Last Name</label>
-                <input onChange={this.handleFieldChange} type="Last Name" id="Last Name" className="form-control" placeholder="Last Name" required="" autoFocus="" />
-                <label htmlFor="inputState" className="sr-only">State</label>
-                <input onChange={this.handleFieldChange} type="State" id="State" className="form-control" placeholder="State" required="" autoFocus="" />
+                <input onChange={this.handleFieldChange} type="Last Name" id="lastName" className="form-control" placeholder="Last Name" required="" autoFocus="" />
                 <label htmlFor="inputCity" className="sr-only">City</label>
-                <input onChange={this.handleFieldChange} type="City" id="City" className="form-control" placeholder="City" required="" autoFocus="" />
+                <input onChange={this.handleFieldChange} type="City" id="city" className="form-control" placeholder="City" required="" autoFocus="" />
+                <label htmlFor="inputState" className="sr-only">State</label>
+                <input onChange={this.handleFieldChange} type="State" id="st" className="form-control" placeholder="State" required="" autoFocus="" />
                 <label htmlFor="inputPassword" className="sr-only">Password</label>
                 <input onChange={this.handleFieldChange} type="password" id="password" className="form-control" placeholder="Password" required="" />
                 <div className="checkbox mb-3">

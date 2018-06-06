@@ -72,7 +72,7 @@ export default class Login extends Component {
                     <input type="checkbox" value="remember-me" /> Remember me
                 </div>
                 <button className="btn btn-lg btn-primary btn-success btn-block" type="submit">Sign in</button>
-                <div><RegModal/></div>
+                <div><RegModal showView={this.props.showView} setActiveUser={this.props.setActiveUser}/></div>
                 <p className="mt-5 mb-3 text-muted">© 2017-2018</p>
 
             </form>

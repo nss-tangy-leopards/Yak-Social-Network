@@ -44,6 +44,15 @@
       "email": "john@mccoy.com",
       "password": "none",
       "id": 9
+    },
+    {
+      "email": "dave@part.com",
+      "password": "none",
+      "firstName": "Dave",
+      "lastName": "Part",
+      "city": "Houghton",
+      "state": "MI",
+      "id": 10
     }
   ],
   "friends": [
